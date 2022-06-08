@@ -6,7 +6,7 @@ jobs:
     name: VPC module
     runs-on: ubuntu-latest
     env: 
-      TFMODULE: ${{ github.workspace }}/main
+      TFMODULE: ${{ github.workspace }}
     steps:
       - name: Checkout Git Code
         uses: actions/checkout@v2
