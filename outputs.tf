@@ -4,6 +4,6 @@ output "vpc_id" {
 }
 
 output "vpc_arn" {
-  description = "The ARN of the VPC"
+  description = "Amazon Resource Name (ARN) of VPC"
   value       = try(aws_vpc.main.arn, "")
 }

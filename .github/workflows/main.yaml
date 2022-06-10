@@ -34,6 +34,7 @@ jobs:
           wget https://github.com/aquasecurity/tfsec/releases/download/v1.4.2/tfsec-linux-amd64 -O tfsec
           chmod +x tfsec
           ./tfsec -s --exclude-downloaded-modules .
+
       - name: Cache Golang Dependencies
         uses: actions/cache@v2
         with:
@@ -43,10 +44,12 @@ jobs:
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go- 
+
       - name: Get Golang Dependencies
         working-directory: ${{ env.TFMODULE }}/test
         run: |
          go mod tidy
+         
       - name: Run Go Test
         working-directory: ${{ env.TFMODULE }}/test
         run: go test -v -timeout 30m
