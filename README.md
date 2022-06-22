@@ -20,7 +20,7 @@ These are the requirements for this module.
 
 ```hcl
 module "vpc-module" {
-  source  = "git@github.com:flugel-it/workshop-vpc.git?ref=v1.0"
+  source  = "git@github.com:flugel-it/workshop-vpc.git"
 
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
