@@ -20,7 +20,7 @@ These are the requirements for this module.
 
 ```hcl
 module "vpc-module" {
-  source  = "flugel-it/workshop-1-terraform-module"
+  source  = "git@github.com:flugel-it/workshop-vpc.git?ref=v1.0"
 
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
